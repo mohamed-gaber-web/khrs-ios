@@ -1,0 +1,87 @@
+
+<ion-content>
+  <ion-spinner *ngIf='isLoading' color="primary" name="crescent"></ion-spinner>
+
+  <ion-grid class="img-course-intro">
+    <ion-row>
+      <ion-col>
+        <div class="img-intro">
+         <ion-img loading="lazy" src="../../../assets/images/intro-screen-course.png" alt="image-intro-course"></ion-img>
+        </div>
+        <div class="icon-sound" (click)="startAudio(courseAudio)">
+          <div class="img-volume">
+            <ion-img
+            class="animate__animated animate__jello animate__delay-2s animate__bounce animate__repeat-2" src="../../../assets/icon/Vector.png">
+          </ion-img>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  <ion-grid>
+    <ion-row class="ion-text-center">
+      <!-- IOn Ref -->
+      <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+          pullingIcon="chevron-down-circle-outline"
+          pullingText="Pull to refresh"
+          refreshingSpinner="circles"
+          refreshingText="Refreshing...">
+        </ion-refresher-content>
+      </ion-refresher>
+      <!-- Ion Ref -->
+
+        <ion-col *ngFor="let course of myCourses" size-xs="6" size-sm="6" size-md="6">
+
+          <div class="my-course">
+              <ion-img class="img-all-course" loading="lazy"  src="{{course.course.imagePath}}"></ion-img>
+              <h3 class="ion-padding-top"  color="primary">
+                {{course.course.courseTranslations[0]?.title}}
+                <div *ngIf="course.userCourse.status == 4" class="status"> <b> Pending </b> </div>
+                <div *ngIf="course.userCourse.status == 2" class="status"> <b> Expired </b> </div>
+                <div *ngIf="course.userCourse.status == 3" class="status"> <b> Failed </b> </div>
+                <div *ngIf="course.userCourse.status == 5">
+                  <ion-button
+                  (click)="goToChooseCourseMaterial(course.course.id, course.userCourse.courseId)">
+                    View
+                  </ion-button>
+                </div>
+              </h3>
+            <div>
+
+              <div slot="end" *ngIf="course.course.courseTranslations[0]?.introVoicePath">
+                <div class="icon-sound-course">
+                    <ion-icon  class="animate__animated animate__jello animate__delay-2s animate__bounce animate__repeat-3" [name]="!course.course.audioElement.status? 'play' : 'stop'" (click)="playIntroHTML(course.course)">
+                    </ion-icon>
+                  </div>
+              </div>
+
+              <div *ngIf="course.userCourse.status == 1">
+                  <ion-text>Passed</ion-text>
+              </div>
+
+              <div class="certi" *ngIf="course.userCourse.status == 1">
+                <ion-button (click)="downloadCertificate(course.course.id)"> Certificate
+                  <ion-icon name="download-outline"></ion-icon>
+                  <ion-spinner *ngIf='isLoading' name="circles"></ion-spinner> </ion-button>
+              </div>
+            </div>
+          </div>
+
+      </ion-col>
+
+
+
+    </ion-row>
+  </ion-grid>
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+
+</ion-content>

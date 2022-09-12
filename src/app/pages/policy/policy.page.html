@@ -1,0 +1,25 @@
+<!-- <app-top-header></app-top-header> -->
+
+
+<div class="top-title">
+  <ion-buttons slot="start">
+  <ion-back-button defaultHref="/"> </ion-back-button>
+</ion-buttons>
+    <h3> Privacy policy</h3>
+  </div>
+
+<ion-content>
+
+  <ion-spinner *ngIf='isLoading' color="primary" name="crescent"></ion-spinner>
+
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="12" size-lg="10">
+        <div class="privacy-policy" *ngFor="let policy of policyData">
+          <ion-text [innerHTML]="policy.content"></ion-text>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

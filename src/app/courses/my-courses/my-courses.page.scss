@@ -1,0 +1,112 @@
+.ext-icon-vlume {
+  text-align: center;
+  margin: auto;
+  width: 30px;
+  height: 30px;
+}
+
+.my-course {
+    position: relative;
+    margin: 30px 0;
+    z-index: 0;
+
+  ion-img {
+      border: 2px solid var(--ion-color-primary);
+      border-radius: 20px;
+      max-width: 90%;
+      height: 170px;
+      padding: 0;
+      margin: 0 auto;
+      object-fit: cover;
+      overflow: hidden;
+  }
+
+  ion-button {
+    --background: var(--ion-color-second-app)!important;
+    --border-radius: 50px!important;
+    font-size: 13px !important;
+    font-weight: 500;
+    width: 60%;
+    height: 30px;
+    text-transform: none;
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: auto;
+  }
+
+   h3 {
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: none;
+    background-color: #fff;
+    padding: 5px 0 0 0;
+    border-radius: 20px;
+    color: #000;
+    border: 2px solid #8AFA6F;
+    position: absolute;
+    bottom: -20px;
+    width: 85%;
+    margin: auto;
+    height: 60px;
+    left: 0;
+    right: 0;
+    line-height: 18px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .icon-sound-course {
+    background-color: #A7F781;
+    border: 3px dotted #fff;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    z-index: 20000000;
+    font-size: 25px;
+}
+}
+
+
+.img-course-intro {
+  margin-bottom: 30px;
+
+  ion-row {
+    justify-content: center;
+  }
+}
+
+.icon-sound {
+  background-color: #A7F781;
+  border: 3px dotted #fff;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  margin: auto;
+  inset: 0;
+
+  .img-volume {
+    @extend .ext-icon-vlume
+  }
+}
+
+ion-text {
+  font-weight: 600;
+  color: var(--ion-color-second-app);
+  font-size: 18px;
+}
+

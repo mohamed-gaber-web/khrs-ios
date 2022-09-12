@@ -1,0 +1,65 @@
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/courses/tabs/all-courses"> </ion-back-button>
+    </ion-buttons>
+
+    <ion-menu-button slot="start"></ion-menu-button>
+
+    <div class="img-profile" slot="end" routerLink="user-profile">
+      <ion-avatar slot="end">
+        <img loading="lazy" *ngIf="userInfo.imagePath" [src]="userInfo.imagePath">
+        <img loading="lazy" *ngIf="userInfo === '' || userInfo.imagePath === null || userInfo.imagePath === undefined"
+        src="../../../assets/images/image profille (1).png">
+      </ion-avatar>
+    </div>
+  </ion-toolbar>
+
+
+<!-- <ion-toolbar>
+  <ion-title>
+    start training
+  </ion-title>
+</ion-toolbar> -->
+
+<ion-content>
+
+  <ion-grid class="img-course-intro">
+    <ion-row>
+      <ion-col size="10" size-lg="4">
+        <ion-img class="img-intro" src="../../../assets/images/img-intro.png"></ion-img>
+        <div class="icon-sound">
+          <div class="img-volume">
+            <ion-img
+            class="animate__animated animate__jello animate__delay-2s animate__bounce animate__infinite" src="../../../assets/icon/Vector.png">
+          </ion-img>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <h3 class="training-title ion-text-center">
+      <img class="exercise-title-icon" src="../../../assets/images/exercise.png" alt="exercise-icon" />
+        Exercise
+    </h3>
+    <h4> Please choose exercise </h4>
+    <ion-row
+
+     class="ion-align-self-center">
+      <ion-col
+        *ngFor="let item of chooseTraining" size="6"
+        (click)="goToCatExercise(item.url, item.exerciseId, item.courseId)">
+
+        <div class="col-block">
+          <ion-img [src]="item.img"></ion-img>
+          <ion-text><a> {{item.name}} </a></ion-text>
+        </div>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+
+

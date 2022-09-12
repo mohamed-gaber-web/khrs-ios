@@ -1,0 +1,42 @@
+.img-profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  ion-avatar {
+    width: 60px;
+    margin: 5px 0;
+    height: 60px;
+  }
+
+  ion-label {
+    font-size: 15px;
+    padding-left: 10px;
+  }
+}
+
+/* end header top */
+
+.faq {
+  margin-top: 30px;
+}
+
+.mat-expansion-panel-header-title {
+  color: var(--ion-color-second-app);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 18px;
+}
+
+.mat-expansion-panel-body {
+  font-size: 14px;
+  color: #000;
+  font-weight: 600;
+}
+
+.mat-expansion-panel {
+    border-radius: 5px !important;
+    padding: 20px 0;
+    margin: 10px 0;
+    border: 1px solid #8AFA6F;
+}

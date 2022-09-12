@@ -1,0 +1,151 @@
+.ext-icon-vlume {
+  width: 24px;
+  height: 24px;
+}
+
+
+.img-course-intro {
+  margin-bottom: 30px;
+
+  ion-row {
+    justify-content: center;
+  }
+}
+
+  .icon-sound {
+    background-color: #A7F781;
+    border: 3px dotted #fff;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    margin: auto;
+    inset: 0;
+
+    .img-volume {
+      @extend .ext-icon-vlume;
+    }
+
+  }
+
+
+/* header Top */
+ion-icon {font-size: 35px;}
+
+ion-header ion-img {
+  width: 35px;
+  height: auto;
+  margin-top: 10px;
+}
+
+
+/* end header top */
+
+ion-tabs ion-icon {
+  color: #fff;
+  font-size: 22px;
+}
+
+ion-tabs ion-label {
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding-top: 0
+}
+
+
+ion-button {
+  width: 53px;
+  height: 53px;
+  --background: #A7F781;
+  border: 1px solid #fff;
+
+}
+
+ion-icon {
+  --color: var(--ion-color-second-app);
+  font-size: 20px;
+}
+
+
+
+ion-tab-button.tab-selected ion-label {
+  color: #A7F781!important;
+  font-weight: bold;
+}
+
+ion-tab-button.tab-selected ion-icon {
+  color: #A7F781!important;
+}
+
+h3.training-title {
+    font-size: 18px;
+    color: var(--ion-color-second-app);
+    font-weight: 600;
+    margin: 0 0 30px 0;
+    text-align: center;
+    text-transform: none;
+    background-color: #062F87;
+    color: #fff;
+    padding: 10px 0 16px 0;
+}
+
+h4 {
+    font-size: 20px;
+    color: var(--ion-color-second-app);
+    font-weight: 500;
+    text-align: center;
+    text-transform: none;
+    color: #062F87;
+}
+
+.col-block {
+  background-color: #fff;
+  -webkit-box-shadow: 2px 3px 5px 0px #0000001A;
+  -moz-box-shadow: 2px 3px 5px 0px #0000001A;
+  -o-box-shadow: 2px 3px 5px 0px #0000001A;
+  box-shadow: 2px 3px 5px 0px #0000001A;
+  text-align: center;
+  margin: 10px auto;
+  max-width: 80%;
+  padding: 30px 0;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 1px solid #8AFA6F;
+
+  ion-img {
+    width: 30px;
+    height: auto;
+    margin: 10px auto;
+  }
+
+  ion-text {
+    color: var(--ion-color-second-app);
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
+
+.img-langauge {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  right: 13px;
+  top: 14px;
+  border: 1px solid #ccc;
+}
+
+img.exercise-title-icon {
+    width: 6%;
+    height: auto;
+    overflow: auto !important;
+}
+
+ion-img.img-intro {
+    border: 2px solid #8AFA6F;
+    border-radius: 20px;
+    overflow: hidden;
+}

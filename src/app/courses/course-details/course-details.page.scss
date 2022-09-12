@@ -1,0 +1,136 @@
+h2#title {
+  font-weight: 600;
+  font-size: 18px;
+  text-align: center;
+  margin: 15px auto;
+  color: var(--ion-color-second-app);
+}
+
+  .course-details_img {
+    ion-img {
+      border: 2px solid var(--ion-color-second-app);
+      border-radius: 20px;
+      overflow: hidden;
+    }
+  }
+
+
+  ion-item {
+    margin: 5px 0;
+    background-color: #fff!important;
+  }
+
+  .icon-valid {
+    width: 30px;
+    height: 30px;
+    line-height: 39px;
+    background-color: var(--ion-color-second-app);
+    text-align: center;
+    border-radius: 50%;
+    margin-right: 10px;
+
+    ion-icon {
+      color: #fff;
+      font-size: 21px;
+    }
+
+  }
+
+  ion-label {
+    font-size: 16px;
+    font-weight: 500;
+    --color: var(--ion-color-second-app);
+  }
+
+  ion-spinner{
+    margin: auto;
+    text-align: center;
+    width: 50%;
+    height: 100%;
+    display: flex;
+}
+
+.statusMsg {
+  background-color: #003182;
+  padding: 10px 0 13px 0;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 300;
+  display: block;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.sound-inro {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  .img-person {
+    img {
+      width: 80%;
+      height: auto;
+    }
+  }
+
+  .img-volume {
+    ion-img {
+      max-width: 45px;
+      width: 45px;
+    }
+  }
+
+  img {
+    max-width:80px;
+    height: auto;
+  }
+
+}
+
+ion-text {
+  cursor: pointer;
+
+  ion-icon {
+    font-size: 22px;
+    position: relative;
+    top: 5px;
+  }
+}
+
+
+.passed {
+  font-size: 20px;
+  color: #003182;
+  font-weight: 600;
+  position: relative;
+  top: 14px;
+}
+
+.valid {
+  border: 2px solid #8AFA6F;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  width: 70%;
+}
+
+video {
+  padding: 10px 0 0 0;
+}
+
+.course-details-descr {
+  text-align: center;
+ ion-text {
+  text-align: center !important;
+  font-size: 14px;
+  color: var(--ion-color-second-app);
+  line-height: 26px;
+  font-weight: 500;
+  }
+
+
+}
+
+

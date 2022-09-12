@@ -1,0 +1,887 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+/********************** Global Css ********************/
+
+body, * {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+ion-toolbar {
+  --background: transparent !important;
+  border-radius: 0 0 30px 30px !important;
+  padding: 7px 0;
+  -webkit-box-shadow: 2px 4px 15px -6px rgba(0,0,0,0.58);
+  -moz-box-shadow: 2px 4px 15px -6px rgba(0,0,0,0.58);
+  box-shadow: 2px 4px 15px -6px rgba(0,0,0,0.58);
+  z-index: 20000000000 !important;
+}
+
+.background-image{
+  background-image: url(./assets/images/login.png) center center no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  max-width: 100%;
+}
+
+.tabs-icons img {
+  width: 25%;
+  margin-top: 15px;
+}
+
+.toolbar-title {
+    overflow: auto !important;
+}
+
+.top-title h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 30px 0 0 0;
+  padding: 0 0 0 20px;
+  text-transform: none;
+  color: var(--ion-color-second-app);
+  text-align: center;
+}
+
+.img-profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  ion-avatar {
+    width: 50px;
+    margin: 5px 15px;
+    height: 50px;
+    border: 2px solid #fff;
+  }
+}
+
+.help-icon {
+    font-size: 40px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+}
+
+.title {
+  text-align: center;
+  h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 30px 0 0 0;
+    padding: 0 0 0 20px;
+    text-transform: none;
+    color: var(--ion-color-second-app);
+  }
+
+}
+
+  img.title-icon {
+    width: 10%;
+    height: auto;
+    position: relative;
+    top: -10px;
+    overflow: auto !important;
+  }
+.no-data {
+  text-align: center;
+  font-weight: 600;
+  font-size: 16px;
+  padding-top: 10px;
+}
+
+.course {
+  position: relative;
+  margin: 30px 0;
+  z-index: 0;
+
+  ion-img {
+    border: 2px solid var(--ion-color-primary);
+    border-radius: 20px;
+    max-width: 90%;
+    height: 170px;
+    padding: 0;
+    margin: 0 auto;
+    object-fit: cover;
+    overflow: hidden;
+  }
+
+  h3 {
+  font-size: 13px;
+    font-weight: 500;
+    text-transform: none;
+    background-color: #fff;
+    padding: 0;
+    border-radius: 20px;
+    color: #000;
+    border: 2px solid #8AFA6F;
+    position: absolute;
+    bottom: -20px;
+    width: 85%;
+    margin: auto;
+    height: 60px;
+    left: 0;
+    right: 0;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .icon-sound-course {
+    background-color: #A7F781;
+    border: 3px dotted #fff;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    z-index: 20000000;
+
+    ion-icon {
+      font-size: 25px;
+      color: var(--ion-color-second-app);
+    }
+
+  }
+
+  ion-button {
+    --color: #fff;
+    max-width: 50%;
+    --background: transparent !important;
+    --box-shadow: none;
+    --color: #003182;
+    height: auto;
+    font-weight: 800;
+  }
+}
+
+.native-input.sc-ion-input-md:-webkit-autofill {
+  font-size: 13px!important;
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+.sc-ion-input-md-h {
+  --padding-top: 0px !important;
+}
+
+ion-tab-bar {
+  --background: var(--ion-color-second-app);
+
+  ion-label {
+      color: #fff;
+      font-size: 14px !important;
+      font-weight: 500;
+  }
+}
+
+ion-title{
+  font-size: 20px;
+  font-weight: 700;
+  --color: var(--ion-color-second-app) !important;
+  margin: 15px 0 10px 0;
+  text-transform: none;
+  text-align: center;
+}
+
+// .ios h3{
+//   font-size: 20px;
+//   font-weight: 600;
+//   --color: var(--ion-color-second-app);
+//   padding: 30px 0;
+//   text-transform: uppercase;
+//   margin: 0 0 0 20px;
+//   // text-align: left;
+//   // margin-left: 20px!important;
+// }
+
+hr {
+    height: 1px;
+    border-width: 0;
+    box-sizing: content-box;
+    border-bottom: 2px solid #062f87;
+    width: 80%;
+    margin: auto;
+}
+
+
+.ios ion-toolbar.ios-toolbar {
+    --background: #edfaf5!important;
+    padding: 15px 0;
+}
+
+ion-button {
+  --background : var(--ion-color-second-app)!important;
+  --border-radius: 50px!important;
+  font-size: 16px !important;
+  font-weight: 500;
+  width: 100%;
+  height: 50px;
+  --box-shadow: 2px 4px 6px 0 rgba(0, 0, 0, 0.16);
+  text-transform: capitalize;
+}
+
+
+ion-toast {
+
+  --color: var(--ion-color-second-app);
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  --height: 80px;
+  border-radius: 10px;
+  text-transform: capitalize;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: #ffffff;
+}
+
+// .img-intro{
+//   border: 2px dotted #48b95e;
+// }
+
+.img-course-intro .img-intro ion-img {
+  max-width: 60%;
+  height: auto;
+  margin: auto;
+}
+
+ion-spinner{
+  margin: auto;
+  text-align: center;
+  width: 30% !important;
+  height: 70% !important;
+  display: flex;
+  color: var(--ion-color-second-app);
+}
+
+
+ion-toolbar {
+
+  ion-icon {
+    color: #fff;
+    font-size: 30px;
+    margin-right: 20px;
+    margin-top: 8px!important;
+  }
+}
+
+.sc-ion-popover-md-h {
+  --width: auto!important;
+ion-icon.close-icon {
+  font-size: 30px;
+  padding: 0 20px 0 0;
+}}
+
+
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  opacity: 1;
+  background: #a7f781;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--ion-color-second-app);
+}
+
+
+img.danish-flag {
+  width: 25px;
+  height: 25px;
+  position: relative;
+  top: 0;
+}
+
+
+video {
+  width: 50%;
+  height: auto;
+}
+
+
+@media(max-width: 600px) {
+  video {
+    width: 100%;
+    height: 250px;
+  }
+
+  video.video-tutorial{
+    width: 100%;
+    height: 500px;
+  }
+}
+
+
+/************ SOUNDS MULTI AND SINGLE CHOICE QUESTION  ***********/
+
+.ext-icon-vlume {
+  color: var(--ion-color-second-app);
+  font-size: 30px;
+}
+
+.sound-group {
+
+  .sound-question {
+  border: 2px dotted var(--ion-color-second-app);
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  border-radius: 10px;
+
+  img.img-lang {  width: 30px; height: auto;}
+
+  .img-volume {@extend .ext-icon-vlume;}
+
+  img.img-lang {width: 30px; height: auto;}
+
+}
+
+}
+
+/************ SOUNDS MULTI AND SINGLE CHOICE QUESTION  ***********/
+
+.swiper-pagination {
+  position: static;
+  text-align: center;
+  z-index: 10;
+  margin-bottom: 20px;
+}
+
+.popover-content.sc-ion-popover-md {
+  position: static!important;
+  }
+
+
+ion-radio {
+  --color-checked: #48b95e;
+}
+
+.total-result {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--ion-color-second-app);
+  text-align: center;
+  margin-left: 50px;
+}
+
+
+
+
+/************* Media Query Desktop *****************/
+
+@media(max-width: 767px) {
+  .hide-desktop{display: none!important;}
+  .puzzle-fix {.title {width: 40%;}}
+
+  .example-box {
+    .puzzle-answer .puzzle-fix .sound {
+      width: 70%;
+    }
+  .puzzle-fix {.title {width: 30%;}}
+  }
+
+    // Test Courses
+  .single-choice ion-text {
+      font-size: 16px!important;
+      margin: 20px 0 ;
+  }
+
+  ion-list-header {padding: 0;}
+}
+
+@media(min-width: 768px) {
+  .hide-mobile {display: none!important;}
+
+
+}
+
+@media(min-width: 1024px) and (max-width: 2000px) {
+  ion-img.img-all-course {
+    width: 100%;
+    height: 250px!important;
+  }
+
+  .img-course-intro .img-intro ion-img {
+    max-width: 100%;
+    width: 30%;
+  }
+
+  .material-text {
+    font-size: 18px;
+  }
+
+  ion-title{
+    font-size: 25px;
+    font-weight: 600;
+    --color: var(--ion-color-second-app);
+    margin: 40px 0 30px 0;
+    text-transform: uppercase;
+    text-align: left;
+  }
+
+  .font-title-desktop {font-size: 25px!important;}
+  .font-description-desktop{font-size: 16px!important; line-height: 30px;}
+
+  ion-spinner{
+    margin: auto;
+    text-align: center;
+    width: 10%!important;
+    height: 100%!important;
+    display: flex;
+  }
+
+  .single-choice, .multi-choice, .drag-group {
+    width: 80%!important;
+  }
+
+  .puzzle-fix {height: 80px!important;}
+
+  .puzzle-answer {margin-top: 0!important;}
+
+  .example-box {
+    .drag-answer ion-img{top: -12px!important;}
+
+    .puzzle-fix {height: 80px!important; width: 65vh!important;}
+
+    .img-volume ion-img {
+      position: relative!important;
+      top: 0!important;
+    }
+  }
+
+  .cdk-drag-preview {
+
+
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+                0 8px 10px 1px rgba(0, 0, 0, 0.14),
+                0 3px 14px 2px rgba(0, 0, 0, 0.12);
+    background-color: white;
+    padding: 10px!important;
+    width: 40%!important;
+    margin: auto;
+    height: auto!important;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ion-color-second-app);
+
+
+
+    .sound-bg {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      margin: 10px 20px;
+    }
+
+    .img-volume {
+      text-align: center;
+      margin: auto;
+      width: 18px;
+      height: 18px;
+    }
+
+
+
+    .puzzle-fix {
+      width: 100%!important;
+      .title{
+        font-weight: 600!important;
+        padding: 0 5px!important;
+      }
+
+      img.danish-flag {
+        width: 24px;
+        height: 24px;
+        max-width: 100%;
+  }
+
+    }
+
+  }
+
+  video {
+    width: 100%;
+    height: 300px;
+    margin: auto;
+  }
+
+
+}
+
+// Media query
+
+@media(max-width: 350px) {
+  ion-title{
+    font-size: 15px;
+  }
+}
+
+@media(max-width: 380px) {
+  .ios ion-title{
+    font-size: 16px!important;
+    text-align: left!important;
+  }
+
+  .col-block ion-text {
+      font-size: 13px !important;
+  }
+
+  .valid{
+    width: 80% !important;
+  }
+
+  .ios .course h3 {
+
+      font-size: 16px!important;
+      font-weight: 500!important;
+  }
+
+  .course h3 {
+      font-size: 10px!important;
+      line-height: 14px;
+      height: 45px;
+      font-weight: 600;
+  }
+
+.my-course h3{
+    font-size: 10px!important;
+    line-height: 18px !important;
+}
+
+}
+
+@media(min-width: 630px) and (max-width: 1200px) {
+  .course ion-img{height: 300px;}
+  .category .category-item {min-height: 90px !important; width: 100% !important;}
+  .course .icon-sound-course {right: 30px;}
+  .img-course-intro .img-intro ion-img {max-width: 35%;}
+  img.title-icon {width: 7%;}
+  .my-course ion-img {height: 300px !important;}
+  .my-course .icon-sound-course {right: 30px !important}
+  .my-course h3 {font-size: 16px !important; padding: 12px 0 0 0 !important; height: 70px !important;}
+  .my-course ion-button { height:40px !important;}
+}
+
+// media query
+
+// IOS version
+
+.ios ion-menu-button {
+  --color: #fff!important;
+  padding: 0 11px;
+}
+
+.ios ion-back-button {font-size: 16px;}
+
+.ios .tabs-icons img {
+  width: 12%;
+}
+
+.ios .lang-bg h3 {
+  margin: 0;
+  padding: 10px 0;
+}
+
+.ios .course h3 {
+  font-size: 12px;
+  line-height: 17px;
+}
+
+.ios .img-course-intro .img-intro ion-img {max-width: 45%;}
+
+.ios .title h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 20px 0 0 0;
+}
+
+.ios ion-toolbar  {
+  padding-top: 25px;
+}
+
+.ios .user-notification{top: 35px !important;}
+
+// IOS version
+
+/************* Media Query Desktop *****************/
+
+/************* Light Mode *****************/
+
+@media (prefers-color-scheme: light) {
+}
+/************* Light Mode *****************/
+
+/************* Dark Mode *****************/
+
+// @media (prefers-color-scheme: dark) {
+  // .top-title h3[color-theme="dark"] {color: #fff !important;}
+  // ion-back-button[color-theme="dark"]{color: #fff;}
+  // .privacy-policy ion-text[color-theme="dark"]{color: #fff !important;}
+  // .course-date ion-label[color-theme="dark"]{color: #fff !important}
+  // .time-valid ion-label[color-theme="dark"]{color: #fff !important}
+  // .title h3[color-theme="dark"] {color: #fff;}
+
+  // img.title-icon[color-theme="dark"] {
+  //   display: none;
+  // }
+
+  // h2#title[color-theme="dark"] {
+  //   color: #fff !important;
+  // }
+
+  // .course-details-descr ion-text[color-theme="dark"] {
+  //   color: #fff !important;
+  // }
+  // .info ion-icon[color-theme="dark"] {
+  //     color: #fff !important;
+  // }
+  // ion-item.in-list[color-theme="dark"] {
+  //   color: #fff !important;
+  // }
+
+  // ion-text.material-p p[color-theme="dark"] {
+  //   color: #fff !important;
+  // }
+
+  // h4[color-theme="dark"] {
+  //   color: #fff !important;
+  // }
+
+  // ion-title[color-theme="dark"] {
+  //   color: #fff;
+  // }
+
+  // .total-result[color-theme="dark"] {
+  //   color: #fff !important;
+  // }
+
+  // .single-choice ion-text[color-theme="dark"] {
+  //   color: --ion-text-color !important;
+  // }
+
+  // .single-choice ion-label[color-theme="dark"] {
+  //   color: #fff !important;
+  // }
+
+  // .single-choice ion-radio[color-theme="dark"] {
+  //   color: --ion-text-color !important;
+  // }
+
+  // .multi-choice ion-radio[color-theme="dark"] {
+  //   --color: #fff !important;
+  // }
+
+  // .multi-choice ion-label[color-theme="dark"] {
+  //   color: #fff !important;
+  // }
+  // .sound-group .sound-question[color-theme="dark"] {
+  //   border: 2px solid #fff !important;
+  // }
+
+  // .ext-icon-vlume[color-theme="dark"], .sound-group .sound-question .img-volume[color-theme="dark"] {
+  //   color: #fff !important;
+  // }
+
+  // th[color-theme="dark"] {
+  //   color: #fff !important;
+  // }
+
+  // img.exercise-title-icon[color-theme="dark"] {
+  //   display: none;
+  // }
+
+  // .help-icon[color-theme="dark"] {
+  //   color: #fff;
+  // }
+
+  // .multi-choice ion-text[color-theme="dark"]{
+  //   color: #fff !important;
+  // }
+  // .course-date ion-label[color-theme="dark"]{color: #fff !important;}
+
+// }
+
+/************* Dark Mode *****************/
+
+/************* Media Query Desktop *****************/
+
+@media(max-width: 767px) {
+
+  .img-intro ion-img {
+    width: 100% !important;
+  }
+
+  .bg-block {
+    width: 100%;
+
+    h3 {
+      font-size: 22px;
+    }
+  }
+
+  .top-title h3 {
+    font-size: 18px;
+  }
+
+  .hide-desktop{display: none!important;}
+  .puzzle-fix {.title {width: 40%;}}
+
+  .example-box {
+    .puzzle-answer .puzzle-fix .sound {
+      width: 70%;
+    }
+  .puzzle-fix {.title {width: 30%;}}
+  }
+
+    // Test Courses
+  .single-choice ion-text {
+      font-size: 16px!important;
+      margin: 20px 0 ;
+  }
+
+  ion-list-header {padding: 0;}
+}
+
+@media(min-width: 768px) {
+  .hide-mobile {display: none!important;}
+
+
+}
+
+@media(min-width: 1024px) and (max-width: 2000px) {
+  .font-title-desktop {font-size: 25px!important;}
+  .font-description-desktop{font-size: 16px!important; line-height: 30px;}
+
+  ion-spinner{
+    margin: auto;
+    text-align: center;
+    width: 10%!important;
+    height: 100%!important;
+    display: flex;
+  }
+
+  .single-choice, .multi-choice, .drag-group {
+    width: 80%!important;
+  }
+
+  .puzzle-fix {height: 80px!important;}
+
+  .puzzle-answer {margin-top: 0!important;}
+
+  .example-box {
+    .drag-answer ion-img{top: -12px!important;}
+
+    .puzzle-fix {height: 80px!important; width: 45vh!important;}
+
+    .img-volume ion-img {
+      position: relative!important;
+      top: 0!important;
+    }
+  }
+
+  .cdk-drag-preview {
+
+
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+                0 8px 10px 1px rgba(0, 0, 0, 0.14),
+                0 3px 14px 2px rgba(0, 0, 0, 0.12);
+    background-color: white;
+    padding: 10px!important;
+    width: 40%!important;
+    margin: auto;
+    height: auto!important;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ion-color-second-app);
+
+    .sound-bg {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      margin: 10px 20px;
+    }
+
+    .img-volume {
+      text-align: center;
+      margin: auto;
+      width: 18px;
+      height: 18px;
+    }
+
+
+
+    .puzzle-fix {
+      width: 100%!important;
+      .title{
+        font-weight: 600!important;
+        padding: 0 5px!important;
+      }
+
+      img.danish-flag {
+        width: 24px;
+        height: 24px;
+        max-width: 100%;
+  }
+
+    }
+
+  }
+
+}
+
+@media(min-width: 1024px) and (max-width: 1104px) {
+  .example-box {
+    .puzzle-fix {height: 80px!important; width: 60vh!important;}
+  }
+}
+
+@media(min-width: 1400px) and (max-width: 1500px) {
+  .example-box {
+    .puzzle-fix {height: 80px!important; width: 70vh!important;}
+  }
+}
+
+
+
+
+/************* Media Query Desktop *****************/

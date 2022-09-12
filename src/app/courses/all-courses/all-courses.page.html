@@ -1,0 +1,54 @@
+<ion-content>
+
+<ion-grid class="img-course-intro">
+  <ion-row>
+    <ion-col>
+      <div class="img-intro">
+        <ion-img loading="lazy" src="../../../assets/images/intro-screen-course.png" alt="image-intro-course"></ion-img>
+      </div>
+      <div class="icon-sound" (click)="startAudio(courseAudio)">
+        <div class="img-volume">
+          <ion-img
+            class="animate__animated animate__jello animate__delay-2s animate__bounce animate__repeat-3"  src="../../../assets/icon/Vector.png">
+        </ion-img>
+        </div>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+<app-category></app-category>
+
+<hr />
+
+  <ion-grid>
+    <div class="title ios-toolbar">
+      <h3>
+        <img class="title-icon" src="../../../assets/images/all-course-icon.png" alt="all-courses-icon" />
+        All courses
+      </h3>
+    </div>
+    <ion-row class="ion-text-center">
+      <ion-col *ngFor="let course of courses" size-xs="6" size-sm="6" size-md="6">
+        <div class="course">
+          <ion-img  (click)="getCourse(course.id)" class="img-all-course" loading="lazy" src="{{course.imagePath}}"></ion-img>
+          <h3  (click)="getCourse(course.id)" class="padding-top"  color="primary"> {{course.courseTranslations[0]?.title}} </h3>
+            <div *ngIf="course.courseTranslations[0]?.introVoicePath">
+              <div class="icon-sound-course">
+                  <ion-icon  class="animate__animated animate__jello animate__delay-2s animate__bounce animate__repeat-2" [name]="!course.audioElement.status? 'play' : 'stop'" (click)="playIntroHTML(course)">
+                  </ion-icon>
+                </div>
+              </div>
+            </div>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

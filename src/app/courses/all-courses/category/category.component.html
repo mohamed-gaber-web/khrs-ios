@@ -1,0 +1,25 @@
+<div class="ios-toolbar category-title">
+  <h3>
+    <img class="title-icon" src="../../../assets/images/category-icon.png" alt="all-courses-icon" />
+    Courses by category
+  </h3>
+</div>
+
+<ion-grid>
+  <ion-row class="ion-justify-content-center">
+    <ion-col size-lg="9" size-sm="12" size="12">
+      <div class="category" *ngIf="categoriesCount > 0">
+        <ion-slides pager="true" [options]="slideOpts">
+          <ion-slide *ngFor="let cat of categories">
+            <div class="category-item" [routerLink]="['/courses/course-by-category/', cat.id]">
+              <h1>{{ cat.categoryTranslations[0].name }}</h1>
+            </div>
+          </ion-slide>
+        </ion-slides>
+      </div>
+
+      <div class="no-data" *ngIf="categoriesCount <= 0"> No category now !! </div>
+
+    </ion-col>
+  </ion-row>
+</ion-grid>

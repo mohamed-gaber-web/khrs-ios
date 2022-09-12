@@ -1,0 +1,74 @@
+/****************** EXERCICE COURSES *********************/
+
+/****************** SINGLE COURSES *********************/
+
+
+.ext-icon-vlume {
+  color: var(--ion-color-second-app);
+  font-size: 30px;
+  position: relative;
+  top: 3px;
+}
+
+ion-toolbar {
+
+  ion-icon {
+    color: var(--ion-color-second-app);
+    font-size: 30px;
+    margin-right: 20px;
+    margin-top: 24px;
+  }
+}
+
+.single-choice {
+  ion-text{
+    color: var(--ion-color-second-app);
+    font-size: 20px;
+    font-weight: 600;
+    margin: 20px 0 50px 0;
+  }
+
+  ion-label{
+    color: var(--ion-color-second-app);
+    font-size: 16px;
+    font-weight: 500;
+    margin: 20px auto;
+  }
+
+  ion-radio {
+    --color: var(--ion-color-second-app);
+  }
+}
+
+
+
+.hideButtonNext {
+  display: none;
+}
+
+.showButtonNext {
+  display: block;
+}
+
+.total-result {
+  font-size: 18px;
+  font-weight: 900;
+  color: var(--ion-color-second-app);
+  text-align: center;
+  margin-left: 50px;
+}
+
+
+
+/****************** EXERCICE COURSES *********************/
+
+/****************** SINGLE COURSES *********************/
+
+.img-langauge {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  right: 13px;
+  top: 14px;
+  border: 1px solid #ccc;
+}

@@ -1,0 +1,40 @@
+<ion-content>
+
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="12" size-lg="6">
+        <form class="form" [formGroup]="applyForm" (ngSubmit)="createCourseApply()">
+            <!-- <ion-input name="fromDateInput"
+              (change)="updateValue()" formControlName="fromDate" type="date" required></ion-input> -->
+              <mat-form-field appearance="fill">
+                <mat-label>Choose From Date</mat-label>
+                <input
+                  color="primary"
+                  placeholder="Choose From Date"
+                  (dateChange)="updateValue($event)"
+                  formControlName="startDate"
+                  matInput [matDatepicker]="picker">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+
+
+            <ion-text color="danger" class="error ion-padding"
+            *ngIf="applyFormErrors.startDate">
+              {{applyFormErrors.startDate }}
+            </ion-text>
+
+          <ion-item>
+           <ion-text *ngIf="courseDetails" color="primary"> To :  {{ toDate | date }} </ion-text>
+          </ion-item>
+
+
+          <ion-button (click)="createCourseApply()" [disabled]="!applyForm.valid">
+            Submit
+          </ion-button>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

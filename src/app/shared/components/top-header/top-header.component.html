@@ -1,0 +1,28 @@
+<ion-toolbar color="primary">
+  <ion-buttons slot="start">
+    <ion-back-button defaultHref="/"> </ion-back-button>
+    
+  </ion-buttons>
+<ion-toggle (ionChange)="onToggleColorTheme($event)" color="primary"></ion-toggle>
+
+  <ion-menu-button slot="start"></ion-menu-button>
+
+  <div class="img-profile" slot="end" routerLink="user-profile">
+    <a [routerLink]="['/auth/user-profile']">
+    <ion-avatar slot="end">
+      <img loading="lazy" *ngIf="userInfo.imagePath" [src]="userInfo.imagePath">
+      <img loading="lazy" *ngIf="userInfo === '' || userInfo.imagePath === null || userInfo.imagePath === undefined"
+      src="../../../assets/images/image profille (1).png">
+    </ion-avatar>
+    </a>
+  </div>
+</ion-toolbar>
+  <div class="user-notification">
+    <ion-icon (click)="toggleModal()" name="notifications"> </ion-icon>
+    <span> {{notifiCount}} </span>
+    <div *ngIf="toggle" class="user-noti-card">
+      <div *ngFor="let itemNotifi of listNotifi">
+      <p *ngIf="itemNotifi.type === 0" [routerLink]="['/courses/course-material', itemNotifi.courseId]" [queryParams]="{offset: itemNotifi.offset}"> {{ itemNotifi.courseName }} | Page {{ itemNotifi.offset }} </p>
+      </div>
+    </div>
+  </div>

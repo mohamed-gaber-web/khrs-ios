@@ -1,0 +1,53 @@
+<ion-content class="background-image" no-scroll>
+
+  <div class="login-logo">
+    <ion-img src="../../../assets/images/logo.png" loading="lazy" alt="login-img"></ion-img>
+  </div>
+
+  <div class="sign-in-form">
+    <div class="sign-in-title">
+      <h3> Login </h3>
+    </div>
+    <ion-grid [formGroup]="loginForm" (ngSubmit)="onLoginFormSubmit(loginForm.value)" class="padding">
+      <ion-row class="ion-justify-content-center">
+
+        <ion-col size="12" size-lg="6" >
+          <div class="form-group" #theItem>
+            <label>
+              Email
+              <!-- <ion-icon name="person"></ion-icon> {{ 'Email' | translate }} -->
+            </label>
+            <input type="text" formControlName="Email" required  />
+            <ion-text color="danger" *ngIf="loginFormErrors.Email">{{loginFormErrors.Email}}</ion-text>
+
+          </div>
+
+          <div class="form-group" #theItem>
+            <label>
+              <!-- <ion-icon name="lock-closed-sharp"></ion-icon> {{ 'Password' | translate }} -->
+              Password
+            </label>
+            <input [type]="showPasswordItem ? 'text' : 'password'" formControlName="Password" required />
+            <ion-icon (click)="showPassword()" class="icon-eye" name="eye-outline"></ion-icon>
+            <ion-text color="danger" *ngIf="loginFormErrors.Password">{{loginFormErrors.Password}}</ion-text>
+
+          </div>
+
+          <p style="text-align: center; font-size: 16px; font-weight: 600;">
+              <a style="color: #fff;text-decoration: none" href="/auth/forget-password"> Forgot Password ? </a> </p>
+
+          <ion-button (click)="onLoginFormSubmit(loginForm.value)" [disabled]="isLoading || !loginForm.valid">
+            {{ 'Login' | translate }}
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <p class="no-account">
+  By continuing, you agree to accept our
+  <a routerLink="/policy" style="color: #8AFA6F;"> Privacy Policy & Terms of Service. </a><br /><br />
+  Don't have an account?<br />
+
+  <span> <a [routerLink]="['/auth/sign-up']">{{ 'Signup' | translate }} </a> </span> </p>
+
+</ion-content>

@@ -1,0 +1,75 @@
+<app-top-header></app-top-header>
+
+<ion-content>
+  <div *ngIf="userInfo">
+
+    <div class="user-profile-item">
+      <ion-avatar>
+        <img loading="lazy" *ngIf="userInfo.imagePath" [src]="userInfo.imagePath">
+        <img loading="lazy" *ngIf="userInfo === '' || userInfo.imagePath === null || userInfo.imagePath === undefined"
+        src="../../../assets/images/image profille (1).png">
+      </ion-avatar>
+    </div>
+
+
+    <div class="user-item">
+      <ion-label color="primary"> Firstname : {{ userInfo.firstname }} </ion-label>
+    </div>
+    <div class="user-item">
+      <ion-label color="primary"> Lastname : {{ userInfo.lastname }} </ion-label>
+    </div>
+    <div class="user-item">
+      <ion-label color="primary"> Phone Number : {{ userInfo.phoneNumber }} </ion-label>
+    </div>
+    <div class="user-item">
+      <ion-label color="primary"> Email : {{ userInfo.email }} </ion-label>
+    </div>
+    <div class="user-item">
+      <ion-label color="primary"> Gender : {{ userInfo.gender === '0' ? 'male' : 'female' }} </ion-label>
+    </div>
+    <div class="user-item">
+      <ion-label color="primary"> Birthday : {{ userInfo.birthdate }} </ion-label>
+    </div>
+  </div>
+
+    <ion-grid class="user-data">
+    <ion-row>
+      <ion-col>
+        <div class="table-responsive">
+          <table class="table table-light table-bordered table-sm">
+            <thead>
+              <th> Course  </th>
+              <th>Start </th>
+              <th>End </th>
+              <th>Status</th>
+              <th>Total Time</th>
+              <th> Certificate</th>
+
+            </thead>
+            <ion-spinner *ngIf="isLoading"></ion-spinner>
+            <tbody>
+              <tr *ngFor="let userList of userDataList">
+                <td> {{userList.courseName}} </td>
+                <td> {{userList.startDate | date}} </td>
+                <td> {{userList.endDate | date}} </td>
+                <td> {{userList.statusName}} </td>
+                <td> {{userList.totalTimeTaken}} </td>
+                <td *ngIf="userList.certificateLink !== null"> <a [href]="userList.certificateLink" target="_blank"> Download </a> </td>
+                <td *ngIf="userList.certificateLink == null"> No Certificate Link </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid class="ion-padding">
+    <ion-button class="update-button" (click)="goToEditUser()"> <ion-icon name="create-outline"></ion-icon> Edit </ion-button>
+    <ion-button class="" routerLink="change-password"> <ion-icon name="create-outline"></ion-icon> Change password </ion-button>
+  </ion-grid>
+
+
+
+</ion-content>
+

@@ -1,0 +1,197 @@
+<ion-content class="background-image">
+
+  <div class="sign-up">
+
+    <h3> Signup </h3>
+
+    <form  [formGroup]="registerForm" (ngSubmit)="onRegisterFormSubmit(registerForm.value)">
+    <ion-grid *ngIf="flagsToggle">
+      <ion-row>
+        <ion-col size="6" *ngIf="flagsToggle['firstnameFlag']">
+          <div class="form-group">
+            <label >Firstname</label>
+            <input type="text" formControlName="FirstName" required />
+            <ion-text color="danger" class="error ion-padding" *ngIf="registerFormErrors.FirstName">
+              {{registerFormErrors.FirstName }}
+            </ion-text>
+          </div>
+        </ion-col>
+
+        <ion-col size="6" *ngIf="flagsToggle['lastnameFlag']">
+          <div class="form-group">
+            <label>Lastname</label>
+            <input type="text" formControlName="LastName" required />
+            <ion-text color="danger" class="error ion-padding" *ngIf="registerFormErrors.LastName">
+              {{ registerFormErrors.LastName }}
+            </ion-text>
+          </div>
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+
+
+    <ion-grid *ngIf="flagsToggle">
+      <ion-row>
+        <ion-col size="12" *ngIf="flagsToggle['phonNumberFlag']">
+          <div class="form-group">
+            <label> Phone Number </label>
+            <input type="text" formControlName="PhoneNumber" minlength="11" required />
+            <ion-text color="danger" *ngIf="registerFormErrors.PhoneNumber">
+              {{ registerFormErrors.PhoneNumber }}
+            </ion-text>
+            <ion-text color="danger" *ngIf="registerForm.controls.PhoneNumber.hasError('minlength')">
+              The phone number must be 12 numbers
+            </ion-text>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid *ngIf="flagsToggle">
+      <ion-row>
+        <ion-col size="12" *ngIf="flagsToggle['emailFlag']">
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" formControlName="email" required />
+            <ion-text color="danger" *ngIf="registerFormErrors.email"> {{ registerFormErrors.email }}</ion-text>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid *ngIf="flagsToggle">
+      <ion-row>
+        <ion-col size="12" *ngIf="flagsToggle['dateOfBirthFlag']">
+          <div class="form-group">
+            <label> Birthday </label>
+            <input type="date" formControllName="Birthdate" required />
+            <ion-text *ngIf="registerFormErrors.Birthdate"> {{ registerFormErrors.Birthdate }}</ion-text>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <div class="form-group">
+            <label> Password </label>
+            <input type="password" formControlName="password" required />
+            <ion-text *ngIf="registerFormErrors.password">{{ registerFormErrors.password }}</ion-text>
+            <ion-text *ngIf="registerForm.controls.password.hasError('minlength')">{{ 'passMin' | translate }}</ion-text>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <div class="form-group">
+            <label>Confirm password</label>
+            <input formControlName="confirmPassword" type="password" required />
+            <ion-text color="danger" *ngIf="registerFormErrors.confirmPassword">{{registerFormErrors.confirmPassword }}</ion-text>
+            <ion-text color="danger" *ngIf="registerForm.controls.confirmPassword.hasError('mismatchedPasswords')">{{ 'notMatch' | translate }}</ion-text>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid *ngIf="flagsToggle">
+      <ion-row>
+        <ion-col size="12" *ngIf="flagsToggle['genderFlag']">
+          <div>
+            <ion-radio-group formControlName="Gender" value="gender">
+              <ion-list-header>
+                <ion-label> Gender </ion-label>
+              </ion-list-header>
+
+                <ion-row>
+                  <ion-col size="6" *ngFor="let genderItem of gender">
+                    <ion-item>
+                      <ion-label>{{ genderItem.name }}</ion-label>
+                      <ion-radio slot="start" [value]="genderItem.value"></ion-radio>
+                    </ion-item>
+                  </ion-col>
+
+                </ion-row>
+
+            </ion-radio-group>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid *ngIf="flagsToggle">
+      <ion-row>
+        <ion-col size="12" *ngIf="flagsToggle['recommendedByFlag']">
+          <div class="form-group">
+              <label>{{ 'Recommended' | translate}}</label>
+              <select formControlName="recommendedbyId" value="brown" okText="Okay" cancelText="Dismiss" required>
+                <option *ngFor="let item of allRecommended" [ngValue]="item.id">
+                  {{ item.recommendedByTranslations[0].description }}
+                </option>
+              </select>
+            </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid *ngIf="flagsToggle">
+      <ion-row>
+        <ion-col size="12" *ngIf="flagsToggle['uploadImageFlag']">
+          <div class="form-group">
+            <label>Upload image</label>
+            <input
+              type="file"
+              class="custom-file-input"
+              multiple="false"
+              accept="image/*"
+              (change)="uploadImg($event)" />
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+              <ion-label>{{ 'acceptTerms' | translate }}</ion-label>
+              <ion-checkbox formControlName="acceptTerms" slot="start" required></ion-checkbox>
+              <ion-text *ngIf="registerFormErrors.acceptTerms"> {{ registerFormErrors.acceptTerms }}</ion-text>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid>
+      <ion-row ion-align-items-center>
+        <ion-col size="12">
+          <ion-button
+          (click)="onRegisterFormSubmit(registerForm.value)"
+          >
+            Signup
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid>
+      <ion-row ion-align-items-center>
+        <ion-col size="12">
+          <p class="no-account">
+            Do you have an account? <span>
+              <a [routerLink]="['/auth/sign-in']"> Sign in </a>
+            </span>
+          </p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </form>
+
+  </div>
+
+</ion-content>
